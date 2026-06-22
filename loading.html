@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ページを読み込み中... | うちなー旅記</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #F7F2E8;
+  color: #2A2015;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.top-bar {
+  padding: 18px 32px;
+  border-bottom: 1px solid #D4C5A0;
+  background: #FAFAF8;
+}
+.logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2E7DAE;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+.logo span { color: #E8714A; }
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.loading-card {
+  background: #FAFAF8;
+  border: 1px solid #D4C5A0;
+  border-radius: 4px;
+  padding: 48px 44px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(42,32,21,0.09);
+}
+.wave-icon {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  display: block;
+  animation: wave 2s ease-in-out infinite;
+}
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.loading-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+  letter-spacing: 0.04em;
+  color: #2A2015;
+}
+.loading-sub {
+  font-size: 0.82rem;
+  color: #5A4E38;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.progress-wrap {
+  width: 100%;
+  height: 5px;
+  background: #EDE5D0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #2E7DAE, #E8714A);
+  border-radius: 999px;
+  transition: width 3.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.loading-note {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <a class="logo" href="/">うちなー<span>旅記</span></a>
+</div>
+<main>
+  <div class="loading-card">
+    <span class="wave-icon">🌊</span>
+    <h1 class="loading-title">ページへ移動中...</h1>
+    <p class="loading-sub">
+      詳細情報ページへ接続しています。<br>
+      しばらくお待ちください。
+    </p>
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <p class="loading-note">🔒 安全な接続で移動します</p>
+  </div>
+</main>
+<script>
+const bar = document.getElementById('progressBar');
+requestAnimationFrame(() => { bar.style.width = '85%'; });
+setTimeout(() => { bar.style.width = '100%'; }, 300);
+setTimeout(() => {
+  window.location.href = 'https://coral-theta.vercel.app/';
+}, 4000);
+</script>
+</body>
+</html>
