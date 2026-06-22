@@ -5,1145 +5,1166 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>うちなー旅記 | 沖縄観光＆ブログ</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
 
-  :root {
-    --sea: #2E7DAE;
-    --sea-light: #5BA3CC;
-    --coral: #E8714A;
-    --coral-light: #F59070;
-    --cream: #F7F2E8;
-    --sand: #D4C5A0;
-    --sand-light: #EDE5D0;
-    --text-dark: #2A2015;
-    --text-mid: #5A4E38;
-    --white: #FAFAF8;
-  }
+:root {
+--sea: #2E7DAE;
+--sea-light: #5BA3CC;
+--coral: #E8714A;
+--coral-light: #F59070;
+--cream: #F7F2E8;
+--sand: #D4C5A0;
+--sand-light: #EDE5D0;
+--text-dark: #2A2015;
+--text-mid: #5A4E38;
+--white: #FAFAF8;
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    line-height: 1.8;
-  }
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background: var(--cream);
+color: var(--text-dark);
+line-height: 1.8;
+}
 
-  /* ===== HEADER ===== */
-  header {
-    background: var(--white);
-    border-bottom: 2px solid var(--sand);
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    padding: 0 2rem;
-  }
-  .header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-  }
-  .logo {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--sea);
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .logo span { color: var(--coral); }
+/* ===== HEADER ===== */
+header {
+background: var(--white);
+border-bottom: 2px solid var(--sand);
+position: sticky;
+top: 0;
+z-index: 200;
+padding: 0 2rem;
+}
+.header-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+height: 64px;
+}
+.logo {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.4rem;
+font-weight: 700;
+color: var(--sea);
+letter-spacing: 0.08em;
+text-decoration: none;
+cursor: pointer;
+}
+.logo span { color: var(--coral); }
 
-  .header-nav { display: flex; align-items: center; gap: 0; }
-  .header-nav a {
-    font-size: 0.83rem;
-    color: var(--text-mid);
-    text-decoration: none;
-    margin-left: 1.8rem;
-    letter-spacing: 0.06em;
-    transition: color 0.2s;
-    cursor: pointer;
-  }
-  .header-nav a:hover,
-  .header-nav a.active { color: var(--coral); }
+.header-nav { display: flex; align-items: center; gap: 0; }
+.header-nav a {
+font-size: 0.83rem;
+color: var(--text-mid);
+text-decoration: none;
+margin-left: 1.8rem;
+letter-spacing: 0.06em;
+transition: color 0.2s;
+cursor: pointer;
+}
+.header-nav a:hover,
+.header-nav a.active { color: var(--coral); }
 
-  /* ===== PAGES ===== */
-  .page { display: none; }
-  .page.active { display: block; }
+/* ===== PAGES ===== */
+.page { display: none; }
+.page.active { display: block; }
 
-  /* ===== HERO ===== */
-  .hero {
-    position: relative;
-    height: 92vh;
-    min-height: 560px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(160deg, rgba(46,125,174,0.72) 0%, rgba(45,80,22,0.5) 60%, rgba(232,113,74,0.3) 100%),
-      url('https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=1600&q=80') center/cover no-repeat;
-  }
-  .hero-pattern {
-    position: absolute; inset: 0; opacity: 0.07;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='16' fill='none' stroke='white' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='8' fill='white'/%3E%3Cpath d='M40 10 L44 24 L40 20 L36 24 Z' fill='white'/%3E%3Cpath d='M40 70 L44 56 L40 60 L36 56 Z' fill='white'/%3E%3Cpath d='M10 40 L24 36 L20 40 L24 44 Z' fill='white'/%3E%3Cpath d='M70 40 L56 36 L60 40 L56 44 Z' fill='white'/%3E%3C/svg%3E");
-    background-size: 80px 80px;
-  }
-  .hero-content {
-    position: relative;
-    text-align: center;
-    color: var(--white);
-    padding: 0 1.5rem;
-  }
-  .hero-eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.28em;
-    opacity: 0.8;
-    margin-bottom: 1rem;
-    font-weight: 300;
-  }
-  .hero-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(2.4rem, 6vw, 4.2rem);
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: 0.04em;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.3);
-    margin-bottom: 1.2rem;
-  }
-  .hero-title em { font-style: normal; color: #FFE5A0; }
-  .hero-sub {
-    font-size: clamp(0.9rem, 2vw, 1.05rem);
-    opacity: 0.88;
-    font-weight: 300;
-    max-width: 520px;
-    margin: 0 auto 2.4rem;
-  }
-  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--coral);
-    color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 2px;
-    text-decoration: none;
-    font-size: 0.88rem;
-    letter-spacing: 0.12em;
-    font-weight: 500;
-    transition: background 0.2s, transform 0.15s;
-    cursor: pointer;
-    border: none;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: var(--coral-light); transform: translateY(-1px); }
-  .btn-outline {
-    border: 1.5px solid rgba(255,255,255,0.7);
-    color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 2px;
-    text-decoration: none;
-    font-size: 0.88rem;
-    letter-spacing: 0.12em;
-    font-weight: 300;
-    backdrop-filter: blur(4px);
-    transition: border-color 0.2s, background 0.2s;
-    cursor: pointer;
-    display: inline-block;
-  }
-  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.12); }
-  .hero-scroll {
-    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-    color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 0.2em;
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  }
-  .hero-scroll::after {
-    content: ''; width: 1px; height: 36px;
-    background: rgba(255,255,255,0.45);
-    animation: scrollLine 1.8s ease-in-out infinite;
-  }
-  @keyframes scrollLine {
-    0%,100% { opacity: 0.3; } 50% { opacity: 1; }
-  }
+/* ===== HERO ===== */
+.hero {
+position: relative;
+height: 92vh;
+min-height: 560px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+linear-gradient(160deg, rgba(46,125,174,0.72) 0%, rgba(45,80,22,0.5) 60%, rgba(232,113,74,0.3) 100%),
+url('https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=1600&q=80') center/cover no-repeat;
+}
+.hero-pattern {
+position: absolute; inset: 0; opacity: 0.07;
+background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='16' fill='none' stroke='white' stroke-width='2'/%3E%3Ccircle cx='40' cy='40' r='8' fill='white'/%3E%3Cpath d='M40 10 L44 24 L40 20 L36 24 Z' fill='white'/%3E%3Cpath d='M40 70 L44 56 L40 60 L36 56 Z' fill='white'/%3E%3Cpath d='M10 40 L24 36 L20 40 L24 44 Z' fill='white'/%3E%3Cpath d='M70 40 L56 36 L60 40 L56 44 Z' fill='white'/%3E%3C/svg%3E");
+background-size: 80px 80px;
+}
+.hero-content {
+position: relative;
+text-align: center;
+color: var(--white);
+padding: 0 1.5rem;
+}
+.hero-eyebrow {
+font-size: 0.78rem;
+letter-spacing: 0.28em;
+opacity: 0.8;
+margin-bottom: 1rem;
+font-weight: 300;
+}
+.hero-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(2.4rem, 6vw, 4.2rem);
+font-weight: 700;
+line-height: 1.25;
+letter-spacing: 0.04em;
+text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+margin-bottom: 1.2rem;
+}
+.hero-title em { font-style: normal; color: #FFE5A0; }
+.hero-sub {
+font-size: clamp(0.9rem, 2vw, 1.05rem);
+opacity: 0.88;
+font-weight: 300;
+max-width: 520px;
+margin: 0 auto 2.4rem;
+}
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+background: var(--coral);
+color: white;
+padding: 0.75rem 2rem;
+border-radius: 2px;
+text-decoration: none;
+font-size: 0.88rem;
+letter-spacing: 0.12em;
+font-weight: 500;
+transition: background 0.2s, transform 0.15s;
+cursor: pointer;
+border: none;
+display: inline-block;
+}
+.btn-primary:hover { background: var(--coral-light); transform: translateY(-1px); }
+.btn-outline {
+border: 1.5px solid rgba(255,255,255,0.7);
+color: white;
+padding: 0.75rem 2rem;
+border-radius: 2px;
+text-decoration: none;
+font-size: 0.88rem;
+letter-spacing: 0.12em;
+font-weight: 300;
+backdrop-filter: blur(4px);
+transition: border-color 0.2s, background 0.2s;
+cursor: pointer;
+display: inline-block;
+}
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.12); }
+.hero-scroll {
+position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 0.2em;
+display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.hero-scroll::after {
+content: ''; width: 1px; height: 36px;
+background: rgba(255,255,255,0.45);
+animation: scrollLine 1.8s ease-in-out infinite;
+}
+@keyframes scrollLine {
+0%,100% { opacity: 0.3; } 50% { opacity: 1; }
+}
 
-  /* ===== SECTION COMMONS ===== */
-  .section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 1.5rem;
-  }
-  .section-header {
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-  }
-  .section-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1.4rem, 3vw, 1.85rem);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-  .section-en {
-    font-size: 0.76rem;
-    color: var(--coral);
-    letter-spacing: 0.22em;
-    font-weight: 300;
-    text-transform: uppercase;
-  }
-  .section-line { flex: 1; height: 1px; background: var(--sand); }
+/* ===== SECTION COMMONS ===== */
+.section {
+max-width: 1100px;
+margin: 0 auto;
+padding: 5rem 1.5rem;
+}
+.section-header {
+margin-bottom: 2.5rem;
+display: flex;
+align-items: baseline;
+gap: 1rem;
+}
+.section-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.4rem, 3vw, 1.85rem);
+font-weight: 700;
+letter-spacing: 0.04em;
+}
+.section-en {
+font-size: 0.76rem;
+color: var(--coral);
+letter-spacing: 0.22em;
+font-weight: 300;
+text-transform: uppercase;
+}
+.section-line { flex: 1; height: 1px; background: var(--sand); }
 
-  .view-more { text-align: center; margin-top: 2.5rem; }
-  .view-more a {
-    font-size: 0.82rem;
-    color: var(--sea);
-    border-bottom: 1px solid var(--sea);
-    text-decoration: none;
-    letter-spacing: 0.14em;
-    padding-bottom: 2px;
-    cursor: pointer;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .view-more a:hover { color: var(--coral); border-color: var(--coral); }
+.view-more { text-align: center; margin-top: 2.5rem; }
+.view-more a {
+font-size: 0.82rem;
+color: var(--sea);
+border-bottom: 1px solid var(--sea);
+text-decoration: none;
+letter-spacing: 0.14em;
+padding-bottom: 2px;
+cursor: pointer;
+transition: color 0.2s, border-color 0.2s;
+}
+.view-more a:hover { color: var(--coral); border-color: var(--coral); }
 
-  /* ===== SPOTS GRID ===== */
-  .spots-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  .spot-card {
-    background: var(--white);
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(42,32,21,0.07);
-    transition: transform 0.22s, box-shadow 0.22s;
-    cursor: pointer;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-  .spot-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(42,32,21,0.13); }
-  .spot-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-  .spot-body { padding: 1.1rem 1.3rem 1.4rem; }
-  .spot-tag {
-    font-size: 0.68rem; color: var(--sea); letter-spacing: 0.15em;
-    background: rgba(46,125,174,0.1); padding: 0.15rem 0.55rem;
-    border-radius: 2px; display: inline-block; margin-bottom: 0.5rem;
-  }
-  .spot-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.05rem; font-weight: 700; margin-bottom: 0.45rem; line-height: 1.45;
-  }
-  .spot-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.75; }
+/* ===== SPOTS GRID ===== */
+.spots-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 1.5rem;
+}
+.spot-card {
+background: var(--white);
+border-radius: 3px;
+overflow: hidden;
+box-shadow: 0 2px 12px rgba(42,32,21,0.07);
+transition: transform 0.22s, box-shadow 0.22s;
+cursor: pointer;
+display: block;
+text-decoration: none;
+color: inherit;
+}
+.spot-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(42,32,21,0.13); }
+.spot-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.spot-body { padding: 1.1rem 1.3rem 1.4rem; }
+.spot-tag {
+font-size: 0.68rem; color: var(--sea); letter-spacing: 0.15em;
+background: rgba(46,125,174,0.1); padding: 0.15rem 0.55rem;
+border-radius: 2px; display: inline-block; margin-bottom: 0.5rem;
+}
+.spot-name {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.05rem; font-weight: 700; margin-bottom: 0.45rem; line-height: 1.45;
+}
+.spot-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.75; }
 
-  /* ===== SEASONS ===== */
-  .seasons-wrap { background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
-  .seasons-grid {
-    display: grid; grid-template-columns: repeat(4,1fr);
-    gap: 1px; background: var(--sand); border: 1px solid var(--sand);
-  }
-  .season-item { background: var(--cream); padding: 1.5rem 1.1rem; text-align: center; }
-  .season-icon { font-size: 1.9rem; margin-bottom: 0.55rem; }
-  .season-name { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
-  .season-desc { font-size: 0.74rem; color: var(--text-mid); line-height: 1.7; }
+/* ===== SEASONS ===== */
+.seasons-wrap { background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+.seasons-grid {
+display: grid; grid-template-columns: repeat(4,1fr);
+gap: 1px; background: var(--sand); border: 1px solid var(--sand);
+}
+.season-item { background: var(--cream); padding: 1.5rem 1.1rem; text-align: center; }
+.season-icon { font-size: 1.9rem; margin-bottom: 0.55rem; }
+.season-name { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
+.season-desc { font-size: 0.74rem; color: var(--text-mid); line-height: 1.7; }
 
-  /* ===== BLOG — CATEGORY FILTER ===== */
-  .cat-filters {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-  .cat-btn {
-    font-size: 0.78rem;
-    padding: 0.35rem 1.1rem;
-    border: 1.5px solid var(--sand);
-    border-radius: 20px;
-    background: transparent;
-    color: var(--text-mid);
-    cursor: pointer;
-    letter-spacing: 0.08em;
-    transition: all 0.18s;
-    font-family: 'Noto Sans JP', sans-serif;
-  }
-  .cat-btn:hover { border-color: var(--coral); color: var(--coral); }
-  .cat-btn.active {
-    background: var(--coral);
-    border-color: var(--coral);
-    color: white;
-  }
+/* ===== BLOG — CATEGORY FILTER ===== */
+.cat-filters {
+display: flex;
+gap: 0.6rem;
+flex-wrap: wrap;
+margin-bottom: 2rem;
+}
+.cat-btn {
+font-size: 0.78rem;
+padding: 0.35rem 1.1rem;
+border: 1.5px solid var(--sand);
+border-radius: 20px;
+background: transparent;
+color: var(--text-mid);
+cursor: pointer;
+letter-spacing: 0.08em;
+transition: all 0.18s;
+font-family: 'Noto Sans JP', sans-serif;
+}
+.cat-btn:hover { border-color: var(--coral); color: var(--coral); }
+.cat-btn.active {
+background: var(--coral);
+border-color: var(--coral);
+color: white;
+}
 
-  /* ===== BLOG GRID ===== */
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.6rem;
-  }
-  .blog-card {
-    background: var(--white);
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(42,32,21,0.06);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-  .blog-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(42,32,21,0.12); }
-  .blog-card-img {
-    width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;
-  }
-  .blog-card-body { padding: 1.1rem 1.3rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
-  .blog-meta {
-    display: flex; align-items: center; gap: 0.8rem;
-    margin-bottom: 0.55rem; flex-wrap: wrap;
-  }
-  .blog-date { font-size: 0.7rem; color: var(--text-mid); opacity: 0.7; }
-  .blog-cat-badge {
-    font-size: 0.67rem;
-    color: var(--coral);
-    border: 1px solid var(--coral-light);
-    padding: 0.1rem 0.5rem;
-    border-radius: 2px;
-    letter-spacing: 0.1em;
-  }
-  .blog-author {
-    font-size: 0.68rem;
-    color: var(--text-mid);
-    opacity: 0.65;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-left: auto;
-  }
-  .blog-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 0.97rem;
-    font-weight: 600;
-    line-height: 1.6;
-    margin-bottom: 0.45rem;
-    color: var(--text-dark);
-  }
-  .blog-excerpt {
-    font-size: 0.79rem;
-    color: var(--text-mid);
-    line-height: 1.75;
-    flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .blog-card-hidden { display: none; }
+/* ===== BLOG GRID ===== */
+.blog-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.6rem;
+}
+.blog-card {
+background: var(--white);
+border-radius: 3px;
+overflow: hidden;
+box-shadow: 0 2px 10px rgba(42,32,21,0.06);
+cursor: pointer;
+transition: transform 0.2s, box-shadow 0.2s;
+display: flex;
+flex-direction: column;
+}
+.blog-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(42,32,21,0.12); }
+.blog-card-img {
+width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;
+}
+.blog-card-body { padding: 1.1rem 1.3rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
+.blog-meta {
+display: flex; align-items: center; gap: 0.8rem;
+margin-bottom: 0.55rem; flex-wrap: wrap;
+}
+.blog-date { font-size: 0.7rem; color: var(--text-mid); opacity: 0.7; }
+.blog-cat-badge {
+font-size: 0.67rem;
+color: var(--coral);
+border: 1px solid var(--coral-light);
+padding: 0.1rem 0.5rem;
+border-radius: 2px;
+letter-spacing: 0.1em;
+}
+.blog-author {
+font-size: 0.68rem;
+color: var(--text-mid);
+opacity: 0.65;
+display: flex;
+align-items: center;
+gap: 0.3rem;
+margin-left: auto;
+}
+.blog-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 0.97rem;
+font-weight: 600;
+line-height: 1.6;
+margin-bottom: 0.45rem;
+color: var(--text-dark);
+}
+.blog-excerpt {
+font-size: 0.79rem;
+color: var(--text-mid);
+line-height: 1.75;
+flex: 1;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.blog-card-hidden { display: none; }
 
-  /* ===== PICKUP BANNER ===== */
-  .pickup-banner {
-    background: var(--sea);
-    padding: 4.5rem 1.5rem;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
-  .pickup-banner::before {
-    content: ''; position: absolute; inset: 0; opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 C18 5 8 15 8 27 C8 39 18 49 30 49 C42 49 52 39 52 27 C52 15 42 5 30 5 Z' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
-    background-size: 60px 60px;
-  }
-  .pickup-sub { font-size: 0.76rem; letter-spacing: 0.26em; opacity: 0.72; margin-bottom: 0.75rem; }
-  .pickup-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1.4rem, 3.5vw, 2rem);
-    font-weight: 700; margin-bottom: 0.85rem; line-height: 1.4;
-  }
-  .pickup-desc {
-    font-size: 0.86rem; opacity: 0.85; max-width: 460px;
-    margin: 0 auto 2rem; font-weight: 300; line-height: 1.9;
-  }
+/* ===== PICKUP BANNER ===== */
+.pickup-banner {
+background: var(--sea);
+padding: 4.5rem 1.5rem;
+text-align: center;
+color: white;
+position: relative;
+overflow: hidden;
+}
+.pickup-banner::before {
+content: ''; position: absolute; inset: 0; opacity: 0.05;
+background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 C18 5 8 15 8 27 C8 39 18 49 30 49 C42 49 52 39 52 27 C52 15 42 5 30 5 Z' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
+background-size: 60px 60px;
+}
+.pickup-sub { font-size: 0.76rem; letter-spacing: 0.26em; opacity: 0.72; margin-bottom: 0.75rem; }
+.pickup-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.4rem, 3.5vw, 2rem);
+font-weight: 700; margin-bottom: 0.85rem; line-height: 1.4;
+}
+.pickup-desc {
+font-size: 0.86rem; opacity: 0.85; max-width: 460px;
+margin: 0 auto 2rem; font-weight: 300; line-height: 1.9;
+}
 
-  /* ===== PROFILE PAGE ===== */
-  .profile-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 5rem 1.5rem;
-  }
-  .profile-hero {
-    display: flex;
-    gap: 2.5rem;
-    align-items: flex-start;
-    margin-bottom: 3.5rem;
-  }
-  .profile-avatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 4px solid var(--sand);
-  }
-  .profile-intro-wrap { flex: 1; }
-  .profile-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-    letter-spacing: 0.04em;
-  }
-  .profile-name-en {
-    font-size: 0.8rem;
-    color: var(--coral);
-    letter-spacing: 0.2em;
-    margin-bottom: 0.9rem;
-    font-weight: 300;
-  }
-  .profile-tagline {
-    font-size: 0.88rem;
-    color: var(--text-mid);
-    line-height: 1.85;
-    border-left: 3px solid var(--coral);
-    padding-left: 1rem;
-    font-style: italic;
-  }
-  .profile-section-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--sand);
-    letter-spacing: 0.04em;
-  }
-  .profile-body { font-size: 0.88rem; color: var(--text-mid); line-height: 2; margin-bottom: 2.5rem; }
-  .profile-body p { margin-bottom: 1rem; }
-  .profile-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
-  .profile-tag {
-    font-size: 0.76rem;
-    padding: 0.3rem 0.9rem;
-    border-radius: 20px;
-    border: 1.5px solid var(--sand);
-    color: var(--text-mid);
-    letter-spacing: 0.08em;
-  }
-  .contact-box {
-    background: var(--white);
-    border: 1px solid var(--sand);
-    border-radius: 4px;
-    padding: 2rem;
-  }
-  .contact-box p { font-size: 0.84rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 1.2rem; }
-  .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.84rem;
-    color: var(--sea);
-    text-decoration: none;
-    border-bottom: 1px solid var(--sea);
-    padding-bottom: 2px;
-    letter-spacing: 0.08em;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .contact-link:hover { color: var(--coral); border-color: var(--coral); }
+/* ===== PROFILE PAGE ===== */
+.profile-wrap {
+max-width: 760px;
+margin: 0 auto;
+padding: 5rem 1.5rem;
+}
+.profile-hero {
+display: flex;
+gap: 2.5rem;
+align-items: flex-start;
+margin-bottom: 3.5rem;
+}
+.profile-avatar {
+width: 140px;
+height: 140px;
+border-radius: 50%;
+object-fit: cover;
+flex-shrink: 0;
+border: 4px solid var(--sand);
+}
+.profile-intro-wrap { flex: 1; }
+.profile-name {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.7rem;
+font-weight: 700;
+margin-bottom: 0.2rem;
+letter-spacing: 0.04em;
+}
+.profile-name-en {
+font-size: 0.8rem;
+color: var(--coral);
+letter-spacing: 0.2em;
+margin-bottom: 0.9rem;
+font-weight: 300;
+}
+.profile-tagline {
+font-size: 0.88rem;
+color: var(--text-mid);
+line-height: 1.85;
+border-left: 3px solid var(--coral);
+padding-left: 1rem;
+font-style: italic;
+}
+.profile-section-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.1rem;
+font-weight: 700;
+margin-bottom: 1rem;
+padding-bottom: 0.5rem;
+border-bottom: 1px solid var(--sand);
+letter-spacing: 0.04em;
+}
+.profile-body { font-size: 0.88rem; color: var(--text-mid); line-height: 2; margin-bottom: 2.5rem; }
+.profile-body p { margin-bottom: 1rem; }
+.profile-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+.profile-tag {
+font-size: 0.76rem;
+padding: 0.3rem 0.9rem;
+border-radius: 20px;
+border: 1.5px solid var(--sand);
+color: var(--text-mid);
+letter-spacing: 0.08em;
+}
+.contact-box {
+background: var(--white);
+border: 1px solid var(--sand);
+border-radius: 4px;
+padding: 2rem;
+}
+.contact-box p { font-size: 0.84rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 1.2rem; }
+.contact-link {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-size: 0.84rem;
+color: var(--sea);
+text-decoration: none;
+border-bottom: 1px solid var(--sea);
+padding-bottom: 2px;
+letter-spacing: 0.08em;
+transition: color 0.2s, border-color 0.2s;
+}
+.contact-link:hover { color: var(--coral); border-color: var(--coral); }
 
-  /* ===== ARTICLE PAGE ===== */
-  .article-wrap {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem 6rem;
-  }
-  .article-back {
-    font-size: 0.78rem;
-    color: var(--text-mid);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.08em;
-    transition: color 0.2s;
-    border: none;
-    background: none;
-    font-family: 'Noto Sans JP', sans-serif;
-  }
-  .article-back:hover { color: var(--coral); }
-  .article-cat {
-    font-size: 0.72rem;
-    color: var(--coral);
-    border: 1px solid var(--coral-light);
-    padding: 0.12rem 0.6rem;
-    border-radius: 2px;
-    letter-spacing: 0.12em;
-    display: inline-block;
-    margin-bottom: 0.8rem;
-  }
-  .article-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
-    font-weight: 700;
-    line-height: 1.45;
-    letter-spacing: 0.03em;
-    margin-bottom: 1.2rem;
-  }
-  .article-meta {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--sand);
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-  }
-  .article-author {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-  .article-avatar {
-    width: 34px; height: 34px;
-    border-radius: 50%; object-fit: cover;
-    border: 2px solid var(--sand);
-  }
-  .article-author-name {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text-dark);
-  }
-  .article-date { font-size: 0.76rem; color: var(--text-mid); opacity: 0.7; }
-  .article-hero-img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    border-radius: 3px;
-    margin-bottom: 2.5rem;
-    display: block;
-  }
-  .article-body { font-size: 0.93rem; line-height: 2.1; color: var(--text-dark); }
-  .article-body p { margin-bottom: 1.4rem; }
-  .article-body h2 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 2.5rem 0 1rem;
-    padding-left: 0.9rem;
-    border-left: 3px solid var(--coral);
-    line-height: 1.5;
-  }
-  .article-body .diary-date {
-    display: inline-block;
-    font-size: 0.78rem;
-    color: var(--sea);
-    background: rgba(46,125,174,0.08);
-    padding: 0.2rem 0.8rem;
-    border-radius: 2px;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.1em;
-  }
+/* ===== ARTICLE PAGE ===== */
+.article-wrap {
+max-width: 760px;
+margin: 0 auto;
+padding: 4rem 1.5rem 6rem;
+}
+.article-back {
+font-size: 0.78rem;
+color: var(--text-mid);
+cursor: pointer;
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+margin-bottom: 2rem;
+letter-spacing: 0.08em;
+transition: color 0.2s;
+border: none;
+background: none;
+font-family: 'Noto Sans JP', sans-serif;
+}
+.article-back:hover { color: var(--coral); }
+.article-cat {
+font-size: 0.72rem;
+color: var(--coral);
+border: 1px solid var(--coral-light);
+padding: 0.12rem 0.6rem;
+border-radius: 2px;
+letter-spacing: 0.12em;
+display: inline-block;
+margin-bottom: 0.8rem;
+}
+.article-title {
+font-family: 'Noto Serif JP', serif;
+font-size: clamp(1.5rem, 3.5vw, 2rem);
+font-weight: 700;
+line-height: 1.45;
+letter-spacing: 0.03em;
+margin-bottom: 1.2rem;
+}
+.article-meta {
+display: flex;
+align-items: center;
+gap: 1.2rem;
+padding-bottom: 1.5rem;
+border-bottom: 1px solid var(--sand);
+margin-bottom: 2rem;
+flex-wrap: wrap;
+}
+.article-author {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
+.article-avatar {
+width: 34px; height: 34px;
+border-radius: 50%; object-fit: cover;
+border: 2px solid var(--sand);
+}
+.article-author-name {
+font-size: 0.82rem;
+font-weight: 500;
+color: var(--text-dark);
+}
+.article-date { font-size: 0.76rem; color: var(--text-mid); opacity: 0.7; }
+.article-hero-img {
+width: 100%;
+aspect-ratio: 16/9;
+object-fit: cover;
+border-radius: 3px;
+margin-bottom: 2.5rem;
+display: block;
+}
+.article-body { font-size: 0.93rem; line-height: 2.1; color: var(--text-dark); }
+.article-body p { margin-bottom: 1.4rem; }
+.article-body h2 {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.2rem;
+font-weight: 700;
+margin: 2.5rem 0 1rem;
+padding-left: 0.9rem;
+border-left: 3px solid var(--coral);
+line-height: 1.5;
+}
+.article-body .diary-date {
+display: inline-block;
+font-size: 0.78rem;
+color: var(--sea);
+background: rgba(46,125,174,0.08);
+padding: 0.2rem 0.8rem;
+border-radius: 2px;
+margin-bottom: 0.5rem;
+letter-spacing: 0.1em;
+}
 
-  /* 関連記事 */
-  .related-section { margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--sand); }
-  .related-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 1.4rem;
-    letter-spacing: 0.04em;
-    color: var(--text-dark);
-  }
-  .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
-  .related-card {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: opacity 0.2s;
-  }
-  .related-card:hover { opacity: 0.8; }
-  .related-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 3px; display: block; margin-bottom: 0.6rem; }
-  .related-cat { font-size: 0.66rem; color: var(--coral); letter-spacing: 0.1em; margin-bottom: 0.3rem; }
-  .related-card-title { font-family: 'Noto Serif JP', serif; font-size: 0.83rem; font-weight: 600; line-height: 1.55; }
+/* 関連記事 */
+.related-section { margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--sand); }
+.related-title {
+font-family: 'Noto Serif JP', serif;
+font-size: 1rem;
+font-weight: 700;
+margin-bottom: 1.4rem;
+letter-spacing: 0.04em;
+color: var(--text-dark);
+}
+.related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+.related-card {
+cursor: pointer;
+text-decoration: none;
+color: inherit;
+display: block;
+transition: opacity 0.2s;
+}
+.related-card:hover { opacity: 0.8; }
+.related-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 3px; display: block; margin-bottom: 0.6rem; }
+.related-cat { font-size: 0.66rem; color: var(--coral); letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+.related-card-title { font-family: 'Noto Serif JP', serif; font-size: 0.83rem; font-weight: 600; line-height: 1.55; }
 
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--text-dark);
-    color: rgba(247,242,232,0.55);
-    padding: 3.5rem 1.5rem 2rem;
-  }
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(247,242,232,0.1);
-    margin-bottom: 2rem;
-  }
-  .footer-brand .footer-logo {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 1.25rem;
-    color: var(--cream);
-    letter-spacing: 0.08em;
-    margin-bottom: 0.7rem;
-    display: block;
-  }
-  .footer-brand .footer-logo span { color: #F59070; }
-  .footer-brand p { font-size: 0.76rem; line-height: 1.9; }
+/* ===== FOOTER ===== */
+footer {
+background: var(--text-dark);
+color: rgba(247,242,232,0.55);
+padding: 3.5rem 1.5rem 2rem;
+}
+.footer-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 2.5rem;
+padding-bottom: 2.5rem;
+border-bottom: 1px solid rgba(247,242,232,0.1);
+margin-bottom: 2rem;
+}
+.footer-brand .footer-logo {
+font-family: 'Noto Serif JP', serif;
+font-size: 1.25rem;
+color: var(--cream);
+letter-spacing: 0.08em;
+margin-bottom: 0.7rem;
+display: block;
+}
+.footer-brand .footer-logo span { color: #F59070; }
+.footer-brand p { font-size: 0.76rem; line-height: 1.9; }
 
-  .footer-col h4 {
-    font-size: 0.78rem;
-    color: var(--cream);
-    letter-spacing: 0.14em;
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-  .footer-col a {
-    display: block;
-    font-size: 0.75rem;
-    color: rgba(247,242,232,0.5);
-    text-decoration: none;
-    margin-bottom: 0.55rem;
-    letter-spacing: 0.07em;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-  .footer-col a:hover { color: #F59070; }
+.footer-col h4 {
+font-size: 0.78rem;
+color: var(--cream);
+letter-spacing: 0.14em;
+margin-bottom: 1rem;
+font-weight: 500;
+}
+.footer-col a {
+display: block;
+font-size: 0.75rem;
+color: rgba(247,242,232,0.5);
+text-decoration: none;
+margin-bottom: 0.55rem;
+letter-spacing: 0.07em;
+cursor: pointer;
+transition: color 0.2s;
+}
+.footer-col a:hover { color: #F59070; }
 
-  .footer-about { font-size: 0.76rem; line-height: 1.9; }
+.footer-about { font-size: 0.76rem; line-height: 1.9; }
 
-  .footer-bottom {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.72rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .footer-bottom a {
-    color: rgba(247,242,232,0.4);
-    text-decoration: none;
-    margin-left: 1.2rem;
-    transition: color 0.2s;
-  }
-  .footer-bottom a:hover { color: #F59070; }
+.footer-bottom {
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.72rem;
+flex-wrap: wrap;
+gap: 0.5rem;
+}
+.footer-bottom a {
+color: rgba(247,242,232,0.4);
+text-decoration: none;
+margin-left: 1.2rem;
+transition: color 0.2s;
+}
+.footer-bottom a:hover { color: #F59070; }
 
-  /* ===== RESPONSIVE ===== */
-  @media(max-width: 760px) {
-    .header-nav { display: none; }
-    .blog-grid { grid-template-columns: 1fr; }
-    .spots-grid { grid-template-columns: 1fr; }
-    .seasons-grid { grid-template-columns: repeat(2,1fr); }
-    .profile-hero { flex-direction: column; align-items: center; text-align: center; }
-    .profile-tagline { text-align: left; }
-    .related-grid { grid-template-columns: 1fr 1fr; }
-    .footer-inner { grid-template-columns: 1fr; gap: 1.8rem; }
-  }
+/* ===== RESPONSIVE ===== */
+@media(max-width: 760px) {
+.header-nav { display: none; }
+.blog-grid { grid-template-columns: 1fr; }
+.spots-grid { grid-template-columns: 1fr; }
+.seasons-grid { grid-template-columns: repeat(2,1fr); }
+.profile-hero { flex-direction: column; align-items: center; text-align: center; }
+.profile-tagline { text-align: left; }
+.related-grid { grid-template-columns: 1fr 1fr; }
+.footer-inner { grid-template-columns: 1fr; gap: 1.8rem; }
+}
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header>
-  <div class="header-inner">
-    <a class="logo" onclick="showPage('home')">うちなー<span>旅記</span></a>
-    <nav class="header-nav">
-      <a onclick="showPage('home'); scrollToSection('spots')" id="nav-spots">観光スポット</a>
-      <a onclick="showPage('home'); scrollToSection('blog')" id="nav-blog">ブログ</a>
-      <a onclick="showPage('home'); scrollToSection('blog')" id="nav-gourmet">グルメ</a>
-      <a onclick="showPage('profile')" id="nav-profile">プロフィール</a>
-    </nav>
-  </div>
+<div class="header-inner">
+<a class="logo" onclick="showPage('home')">うちなー<span>旅記</span></a>
+<nav class="header-nav">
+<a onclick="showPage('home'); scrollToSection('spots')" id="nav-spots">観光スポット</a>
+<a onclick="showPage('home'); scrollToSection('blog')" id="nav-blog">ブログ</a>
+<a onclick="showPage('home'); scrollToSection('blog')" id="nav-gourmet">グルメ</a>
+<a onclick="showPage('profile')" id="nav-profile">プロフィール</a>
+</nav>
+</div>
 </header>
 
 <!-- ========== HOME PAGE ========== -->
 <div id="page-home" class="page active">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-pattern"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">OKINAWA TRAVEL &amp; LIFE</p>
-      <h1 class="hero-title">青い海と<em>命</em>の島<br>沖縄へ、ようこそ</h1>
-      <p class="hero-sub">碧の海、珊瑚の浜、琉球の文化——<br>地元目線で綴る、沖縄旅のすべて。</p>
-      <div class="hero-btns">
-        <a class="btn-primary" onclick="scrollToSection('spots')">観光スポットを見る</a>
-        <a class="btn-outline" onclick="scrollToSection('blog')">ブログを読む</a>
-      </div>
-    </div>
-    <div class="hero-scroll">SCROLL</div>
-  </section>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-pattern"></div>
+<div class="hero-content">
+<p class="hero-eyebrow">OKINAWA TRAVEL &amp; LIFE</p>
+<h1 class="hero-title">青い海と<em>命</em>の島<br>沖縄へ、ようこそ</h1>
+<p class="hero-sub">碧の海、珊瑚の浜、琉球の文化——<br>地元目線で綴る、沖縄旅のすべて。</p>
+<div class="hero-btns">
+<a class="btn-primary" onclick="scrollToSection('spots')">観光スポットを見る</a>
+<a class="btn-outline" onclick="scrollToSection('blog')">ブログを読む</a>
+</div>
+</div>
+<div class="hero-scroll">SCROLL</div>
+</section>
+
 <!-- SPOTS -->
- <div class="spots-grid">
-          <div class="spot-card">
-            <img class="spot-img" src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&q=80" alt="万座毛">
-            <div class="spot-body">
-              <span class="spot-tag">絶景</span>
-              <p class="spot-name">万座毛</p>
-              <p class="spot-desc">象の形をした奇岩と、エメラルドグリーンの海。夕暮れ時は特に美しく、息をのむ絶景を楽しめます。</p>
-            </div>
-          </div>
-          <div class="spot-card">
-            <img class="spot-img" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80" alt="首里城">
-            <div class="spot-body">
-              <span class="spot-tag">文化・歴史</span>
-              <p class="spot-name">首里城</p>
-              <p class="spot-desc">琉球王国の栄華を伝える世界遺産。鮮やかな朱色の城郭は那覇の丘に凛と立ちます。</p>
-            </div>
-          </div>
-          <div class="spot-card">
-            <img class="spot-img" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="青の洞窟">
-            <div class="spot-body">
-              <span class="spot-tag">マリン</span>
-              <p class="spot-name">青の洞窟・真栄田岬</p>
-              <p class="spot-desc">光が差し込むと洞窟内が幻想的な青に染まる、シュノーケリングの名所。</p>
-            </div>
-          </div>
-          <div class="spot-card">
-            <img class="spot-img" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&q=80" alt="古宇利島">
-            <div class="spot-body">
-              <span class="spot-tag">島めぐり</span>
-              <p class="spot-name">古宇利島</p>
-              <p class="spot-desc">「恋の島」として知られる絶景スポット。ハートロックはカップルに大人気です。</p>
-            </div>
-          </div>
-          <div class="spot-card">
-            <img class="spot-img" src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&q=80" alt="竹富島">
-            <div class="spot-body">
-              <span class="spot-tag">離島</span>
-              <p class="spot-name">竹富島</p>
-              <p class="spot-desc">赤瓦の古民家と白砂の道が続く、時間がゆっくり流れる離島。水牛車の旅が定番。</p>
-            </div>
-          </div>
-          <div class="spot-card">
-            <img class="spot-img" src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&q=80" alt="やんばる">
-            <div class="spot-body">
-              <span class="spot-tag">自然</span>
-              <p class="spot-name">やんばる国立公園</p>
-              <p class="spot-desc">ヤンバルクイナが棲む原生の森。世界自然遺産の豊かな生態系が広がります。</p>
-            </div>
-          </div>
-        </div>
+<div id="spots">
+<div class="section">
+<div class="section-header">
+<h2 class="section-title">おすすめ観光スポット</h2>
+<span class="section-en">Spots</span>
+<div class="section-line"></div>
+</div>
+<div class="spots-grid">
+<div class="spot-card">
+<img class="spot-img" src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=600&q=80" alt="万座毛">
+<div class="spot-body">
+<span class="spot-tag">絶景</span>
+<p class="spot-name">万座毛</p>
+<p class="spot-desc">象の形をした奇岩と、エメラルドグリーンの海。夕暮れ時は特に美しく、息をのむ絶景を楽しめます。</p>
+</div>
+</div>
+<div class="spot-card">
+<img class="spot-img" src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&q=80" alt="首里城">
+<div class="spot-body">
+<span class="spot-tag">文化・歴史</span>
+<p class="spot-name">首里城</p>
+<p class="spot-desc">琉球王国の栄華を伝える世界遺産。鮮やかな朱色の城郭は那覇の丘に凛と立ちます。</p>
+</div>
+</div>
+<div class="spot-card">
+<img class="spot-img" src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=600&q=80" alt="青の洞窟">
+<div class="spot-body">
+<span class="spot-tag">マリン</span>
+<p class="spot-name">青の洞窟・真栄田岬</p>
+<p class="spot-desc">光が差し込むと洞窟内が幻想的な青に染まる、シュノーケリングの名所。</p>
+</div>
+</div>
+<div class="spot-card">
+<img class="spot-img" src="https://images.unsplash.com/photo-1518390422-2e0e5d2b4bdf?w=600&q=80" alt="古宇利島">
+<div class="spot-body">
+<span class="spot-tag">島めぐり</span>
+<p class="spot-name">古宇利島</p>
+<p class="spot-desc">「恋の島」として知られる絶景スポット。ハートロックはカップルに大人気です。</p>
+</div>
+</div>
+<div class="spot-card">
+<img class="spot-img" src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" alt="竹富島">
+<div class="spot-body">
+<span class="spot-tag">離島</span>
+<p class="spot-name">竹富島</p>
+<p class="spot-desc">赤瓦の古民家と白砂の道が続く、時間がゆっくり流れる離島。水牛車の旅が定番。</p>
+</div>
+</div>
+<div class="spot-card">
+<img class="spot-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="やんばる">
+<div class="spot-body">
+<span class="spot-tag">自然</span>
+<p class="spot-name">やんばる国立公園</p>
+<p class="spot-desc">ヤンバルクイナが棲む原生の森。世界自然遺産の豊かな生態系が広がります。</p>
+</div>
+</div>
+</div>
+<div class="view-more"><a href="#">すべてのスポットを見る　→</a></div>
 
-  <!-- SEASONS -->
-  <div class="seasons-wrap">
-    <div class="section" style="padding: 3.5rem 1.5rem;">
-      <div class="section-header">
-        <h2 class="section-title">季節で選ぶ沖縄</h2>
-        <span class="section-en">By Season</span>
-        <div class="section-line"></div>
-      </div>
-      <div class="seasons-grid">
-        <div class="season-item"><div class="season-icon">🌸</div><p class="season-name">春（3〜5月）</p><p class="season-desc">桜は1月〜。穏やかな海でシュノーケリング日和。GWは混雑注意。</p></div>
-        <div class="season-item"><div class="season-icon">🌊</div><p class="season-name">夏（6〜8月）</p><p class="season-desc">海水浴シーズン本番。台風シーズンでもあるので日程に余裕を。</p></div>
-        <div class="season-item"><div class="season-icon">🌺</div><p class="season-name">秋（9〜11月）</p><p class="season-desc">台風が去れば穏やかな穴場シーズン。観光客も少なめでゆったり。</p></div>
-        <div class="season-item"><div class="season-icon">🐋</div><p class="season-name">冬（12〜2月）</p><p class="season-desc">ザトウクジラのシーズン。本土より暖かく、静かな島を楽しめる。</p></div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
 
-  <!-- BLOG -->
-  <div id="blog">
-    <div class="section">
-      <div class="section-header">
-        <h2 class="section-title">旅日記・ブログ</h2>
-        <span class="section-en">Blog</span>
-        <div class="section-line"></div>
-      </div>
+<!-- SEASONS -->
+<div class="seasons-wrap">
+<div class="section" style="padding: 3.5rem 1.5rem;">
+<div class="section-header">
+<h2 class="section-title">季節で選ぶ沖縄</h2>
+<span class="section-en">By Season</span>
+<div class="section-line"></div>
+</div>
+<div class="seasons-grid">
+<div class="season-item"><div class="season-icon">🌸</div><p class="season-name">春（3〜5月）</p><p class="season-desc">桜は1月〜。穏やかな海でシュノーケリング日和。GWは混雑注意。</p></div>
+<div class="season-item"><div class="season-icon">🌊</div><p class="season-name">夏（6〜8月）</p><p class="season-desc">海水浴シーズン本番。台風シーズンでもあるので日程に余裕を。</p></div>
+<div class="season-item"><div class="season-icon">🌺</div><p class="season-name">秋（9〜11月）</p><p class="season-desc">台風が去れば穏やかな穴場シーズン。観光客も少なめでゆったり。</p></div>
+<div class="season-item"><div class="season-icon">🐋</div><p class="season-name">冬（12〜2月）</p><p class="season-desc">ザトウクジラのシーズン。本土より暖かく、静かな島を楽しめる。</p></div>
+</div>
+</div>
+</div>
 
-      <!-- カテゴリフィルター -->
-      <div class="cat-filters">
-        <button class="cat-btn active" onclick="filterBlog('all', this)">すべて</button>
-        <button class="cat-btn" onclick="filterBlog('グルメ', this)">グルメ</button>
-        <button class="cat-btn" onclick="filterBlog('ビーチ', this)">ビーチ</button>
-        <button class="cat-btn" onclick="filterBlog('文化・祭り', this)">文化・祭り</button>
-        <button class="cat-btn" onclick="filterBlog('旅のヒント', this)">旅のヒント</button>
-        <button class="cat-btn" onclick="filterBlog('島暮らし', this)">島暮らし</button>
-      </div>
+<!-- BLOG -->
+<div id="blog">
+<div class="section">
+<div class="section-header">
+<h2 class="section-title">旅日記・ブログ</h2>
+<span class="section-en">Blog</span>
+<div class="section-line"></div>
+</div>
 
-      <div class="blog-grid" id="blogGrid">
-        <div class="blog-card" data-cat="グルメ" onclick="showArticle('soki')">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=600&q=80" alt="ソーキそば">
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-date">2025年6月12日</span>
-              <span class="blog-cat-badge">グルメ</span>
-              <span class="blog-author">✍ 海咲</span>
-            </div>
-            <p class="blog-title">地元民が通う！那覇の本当に旨いソーキそばの店5選</p>
-            <p class="blog-excerpt">観光ガイドには載っていない、地元に長年愛されてきた名店を厳選してご紹介します。</p>
-          </div>
-        </div>
-        <div class="blog-card" data-cat="ビーチ" onclick="showArticle('beach')">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="ビーチ">
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-date">2025年6月5日</span>
-              <span class="blog-cat-badge">ビーチ</span>
-              <span class="blog-author">✍ 海咲</span>
-            </div>
-            <p class="blog-title">穴場ビーチ10選——地元だけが知る透明度抜群の海</p>
-            <p class="blog-excerpt">観光客でにぎわうメジャービーチを離れて、静かで美しいプライベートビーチへ。</p>
-          </div>
-        </div>
-        <div class="blog-card" data-cat="文化・祭り" onclick="showArticle('eisa')">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&q=80" alt="エイサー">
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-date">2025年5月28日</span>
-              <span class="blog-cat-badge">文化・祭り</span>
-              <span class="blog-author">✍ 海咲</span>
-            </div>
-            <p class="blog-title">エイサーの季節がやってきた——夏祭り完全ガイド2025</p>
-            <p class="blog-excerpt">沖縄の夏を彩るエイサー。各地で開催される祭りの日程と見どころをまとめました。</p>
-          </div>
-        </div>
-        <div class="blog-card" data-cat="島暮らし" onclick="showArticle('life')">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&q=80" alt="島暮らし">
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-date">2025年5月19日</span>
-              <span class="blog-cat-badge">島暮らし</span>
-              <span class="blog-author">✍ 海咲</span>
-            </div>
-            <p class="blog-title">沖縄移住2年目の私が感じたこと——島暮らしのリアルな話</p>
-            <p class="blog-excerpt">移住を夢見るあなたへ。実際に住んでみてわかった良いところ、難しいところを正直に。</p>
-          </div>
-        </div>
-        <div class="blog-card" data-cat="旅のヒント" onclick="showArticle('hint')">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=600&q=80" alt="旅のヒント">
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-date">2025年5月8日</span>
-              <span class="blog-cat-badge">旅のヒント</span>
-              <span class="blog-author">✍ 海咲</span>
-            </div>
-            <p class="blog-title">那覇を拠点に3泊4日——はじめての沖縄本島の回り方</p>
-            <p class="blog-excerpt">初めて沖縄を旅する方向けに、無理なく充実した3泊4日のモデルプランを考えました。</p>
-          </div>
-        </div>
-        <div class="blog-card" data-cat="グルメ" onclick="showArticle('awamori')">
-          <img class="blog-card-img" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="泡盛">
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-date">2025年4月22日</span>
-              <span class="blog-cat-badge">グルメ</span>
-              <span class="blog-author">✍ 海咲</span>
-            </div>
-            <p class="blog-title">泡盛ビギナーへ——まず飲むべき銘柄と飲み方ガイド</p>
-            <p class="blog-excerpt">独特の香りが苦手でも大丈夫。飲みやすい銘柄から始めて、少しずつ世界を広げてみて。</p>
-          </div>
-        </div>
-      </div>
-      <div class="view-more"><a href="#">すべての記事を見る　→</a></div>
-    </div>
-  </div>
+<!-- カテゴリフィルター -->
+<div class="cat-filters">
+<button class="cat-btn active" onclick="filterBlog('all', this)">すべて</button>
+<button class="cat-btn" onclick="filterBlog('グルメ', this)">グルメ</button>
+<button class="cat-btn" onclick="filterBlog('ビーチ', this)">ビーチ</button>
+<button class="cat-btn" onclick="filterBlog('文化・祭り', this)">文化・祭り</button>
+<button class="cat-btn" onclick="filterBlog('旅のヒント', this)">旅のヒント</button>
+<button class="cat-btn" onclick="filterBlog('島暮らし', this)">島暮らし</button>
+</div>
 
-  <!-- PICKUP BANNER -->
-  <div class="pickup-banner">
-    <p class="pickup-sub">SPECIAL FEATURE</p>
-    <h2 class="pickup-title">夏の沖縄を120%楽しむ<br>完全ガイド2025</h2>
-    <p class="pickup-desc">マリンアクティビティ、食、祭り——沖縄の夏を満喫するための保存版ガイドです。</p>
-    <a class="btn-primary" onclick="showArticle('summer')">ガイドを読む</a>
-  </div>
+<div class="blog-grid" id="blogGrid">
+<div class="blog-card" data-cat="グルメ" onclick="showArticle('soki')">
+<img class="blog-card-img" src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=600&q=80" alt="ソーキそば">
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-date">2025年6月12日</span>
+<span class="blog-cat-badge">グルメ</span>
+<span class="blog-author">✍ 海咲</span>
+</div>
+<p class="blog-title">地元民が通う！那覇の本当に旨いソーキそばの店5選</p>
+<p class="blog-excerpt">観光ガイドには載っていない、地元に長年愛されてきた名店を厳選してご紹介します。</p>
+</div>
+</div>
+<div class="blog-card" data-cat="ビーチ" onclick="showArticle('beach')">
+<img class="blog-card-img" src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=80" alt="ビーチ">
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-date">2025年6月5日</span>
+<span class="blog-cat-badge">ビーチ</span>
+<span class="blog-author">✍ 海咲</span>
+</div>
+<p class="blog-title">穴場ビーチ10選——地元だけが知る透明度抜群の海</p>
+<p class="blog-excerpt">観光客でにぎわうメジャービーチを離れて、静かで美しいプライベートビーチへ。</p>
+</div>
+</div>
+<div class="blog-card" data-cat="文化・祭り" onclick="showArticle('eisa')">
+<img class="blog-card-img" src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=600&q=80" alt="エイサー">
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-date">2025年5月28日</span>
+<span class="blog-cat-badge">文化・祭り</span>
+<span class="blog-author">✍ 海咲</span>
+</div>
+<p class="blog-title">エイサーの季節がやってきた——夏祭り完全ガイド2025</p>
+<p class="blog-excerpt">沖縄の夏を彩るエイサー。各地で開催される祭りの日程と見どころをまとめました。</p>
+</div>
+</div>
+<div class="blog-card" data-cat="島暮らし" onclick="showArticle('life')">
+<img class="blog-card-img" src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=600&q=80" alt="島暮らし">
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-date">2025年5月19日</span>
+<span class="blog-cat-badge">島暮らし</span>
+<span class="blog-author">✍ 海咲</span>
+</div>
+<p class="blog-title">沖縄移住2年目の私が感じたこと——島暮らしのリアルな話</p>
+<p class="blog-excerpt">移住を夢見るあなたへ。実際に住んでみてわかった良いところ、難しいところを正直に。</p>
+</div>
+</div>
+<div class="blog-card" data-cat="旅のヒント" onclick="showArticle('hint')">
+<img class="blog-card-img" src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=600&q=80" alt="旅のヒント">
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-date">2025年5月8日</span>
+<span class="blog-cat-badge">旅のヒント</span>
+<span class="blog-author">✍ 海咲</span>
+</div>
+<p class="blog-title">那覇を拠点に3泊4日——はじめての沖縄本島の回り方</p>
+<p class="blog-excerpt">初めて沖縄を旅する方向けに、無理なく充実した3泊4日のモデルプランを考えました。</p>
+</div>
+</div>
+<div class="blog-card" data-cat="グルメ" onclick="showArticle('awamori')">
+<img class="blog-card-img" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80" alt="泡盛">
+<div class="blog-card-body">
+<div class="blog-meta">
+<span class="blog-date">2025年4月22日</span>
+<span class="blog-cat-badge">グルメ</span>
+<span class="blog-author">✍ 海咲</span>
+</div>
+<p class="blog-title">泡盛ビギナーへ——まず飲むべき銘柄と飲み方ガイド</p>
+<p class="blog-excerpt">独特の香りが苦手でも大丈夫。飲みやすい銘柄から始めて、少しずつ世界を広げてみて。</p>
+</div>
+</div>
+</div>
+<div class="view-more"><a href="#">すべての記事を見る　→</a></div>
+
+</div>
+</div>
+
+<!-- PICKUP BANNER -->
+<div class="pickup-banner">
+<p class="pickup-sub">SPECIAL FEATURE</p>
+<h2 class="pickup-title">夏の沖縄を120%楽しむ<br>完全ガイド2025</h2>
+<p class="pickup-desc">マリンアクティビティ、食、祭り——沖縄の夏を満喫するための保存版ガイドです。</p>
+<a class="btn-primary" onclick="showArticle('summer')">ガイドを読む</a>
+</div>
 
 </div><!-- /page-home -->
 
 
 <!-- ========== PROFILE PAGE ========== -->
 <div id="page-profile" class="page">
-  <div class="profile-wrap">
-    <div class="section-header" style="margin-bottom: 2.5rem;">
-      <h2 class="section-title">プロフィール</h2>
-      <span class="section-en">About</span>
-      <div class="section-line"></div>
-    </div>
+<div class="profile-wrap">
+<div class="section-header" style="margin-bottom: 2.5rem;">
+<h2 class="section-title">プロフィール</h2>
+<span class="section-en">About</span>
+<div class="section-line"></div>
+</div>
 
-    <div class="profile-hero">
-      <img class="profile-avatar"
-        src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80"
-        alt="海咲">
-      <div class="profile-intro-wrap">
-        <p class="profile-name">比嘉　海咲</p>
-        <p class="profile-name-en">HIGA MISAKI</p>
-        <p class="profile-tagline">
-          沖縄生まれ、沖縄育ち。<br>
-          海と食と祭りが好きな、根っからのウチナーンチュ。<br>
-          島の日常をそのまま、言葉にしています。
-        </p>
-      </div>
-    </div>
+<div class="profile-hero">
+<img class="profile-avatar"
+src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80"
 
-    <p class="profile-section-title">このブログについて</p>
-    <div class="profile-body">
-      <p>はじめまして。うちなー旅記を書いている、比嘉海咲（ひが みさき）です。沖縄の南部、糸満市で生まれ、那覇に移り住んでもう15年になります。</p>
-      <p>観光ガイドには載っていない「ウチナーンチュの日常」を伝えたくて、2022年にこのブログをはじめました。地元民が通う食堂、地図に載っていないビーチ、夏祭りの裏側——そういう、島に暮らしているからこそ見えるものを書いています。</p>
-      <p>旅で沖縄を訪れる方にも、移住を考えている方にも、少しでも「リアルな沖縄」が伝わればうれしいです。</p>
-    </div>
+alt="海咲">
+<div class="profile-intro-wrap">
+<p class="profile-name">比嘉　海咲</p>
+<p class="profile-name-en">HIGA MISAKI</p>
+<p class="profile-tagline">
+沖縄生まれ、沖縄育ち。<br>
+海と食と祭りが好きな、根っからのウチナーンチュ。<br>
+島の日常をそのまま、言葉にしています。
+</p>
+</div>
+</div>
 
-    <p class="profile-section-title">好きなこと・得意なこと</p>
-    <div class="profile-tags">
-      <span class="profile-tag">🌊 シュノーケリング</span>
-      <span class="profile-tag">🍜 沖縄そば巡り</span>
-      <span class="profile-tag">🥁 エイサー鑑賞</span>
-      <span class="profile-tag">🌺 ハイビスカス栽培</span>
-      <span class="profile-tag">📷 旅写真</span>
-      <span class="profile-tag">🐋 ホエールウォッチング</span>
-      <span class="profile-tag">🍶 泡盛の飲み比べ</span>
-    </div>
+<p class="profile-section-title">このブログについて</p>
+<div class="profile-body">
+<p>はじめまして。うちなー旅記を書いている、比嘉海咲（ひが みさき）です。沖縄の南部、糸満市で生まれ、那覇に移り住んでもう15年になります。</p>
+<p>観光ガイドには載っていない「ウチナーンチュの日常」を伝えたくて、2022年にこのブログをはじめました。地元民が通う食堂、地図に載っていないビーチ、夏祭りの裏側——そういう、島に暮らしているからこそ見えるものを書いています。</p>
+<p>旅で沖縄を訪れる方にも、移住を考えている方にも、少しでも「リアルな沖縄」が伝わればうれしいです。</p>
+</div>
 
-    <p class="profile-section-title">お問い合わせ</p>
-    <div class="contact-box">
-      <p>取材・コラボレーション・旅の相談など、お気軽にご連絡ください。<br>できるかぎりお返事します（2〜3営業日以内を目安に）。</p>
-      <a class="contact-link" href="mailto:misaki@uchinatabiki.jp">✉ misaki@uchinatabiki.jp</a>
-    </div>
-  </div>
+<p class="profile-section-title">好きなこと・得意なこと</p>
+<div class="profile-tags">
+<span class="profile-tag">🌊 シュノーケリング</span>
+<span class="profile-tag">🍜 沖縄そば巡り</span>
+<span class="profile-tag">🥁 エイサー鑑賞</span>
+<span class="profile-tag">🌺 ハイビスカス栽培</span>
+<span class="profile-tag">📷 旅写真</span>
+<span class="profile-tag">🐋 ホエールウォッチング</span>
+<span class="profile-tag">🍶 泡盛の飲み比べ</span>
+</div>
+
+<p class="profile-section-title">お問い合わせ</p>
+<div class="contact-box">
+<p>取材・コラボレーション・旅の相談など、お気軽にご連絡ください。<br>できるかぎりお返事します（2〜3営業日以内を目安に）。</p>
+<a class="contact-link" href="mailto:misaki@uchinatabiki.jp">✉ misaki@uchinatabiki.jp</a>
+</div>
+</div>
 </div>
 
 
 <!-- ========== ARTICLE PAGE ========== -->
 <div id="page-article" class="page">
-  <div class="article-wrap">
-    <button class="article-back" onclick="showPage('home'); scrollToSection('blog')">← ブログ一覧へ戻る</button>
-    <div id="articleContent"></div>
-  </div>
+<div class="article-wrap">
+<button class="article-back" onclick="showPage('home'); scrollToSection('blog')">← ブログ一覧へ戻る</button>
+<div id="articleContent"></div>
+</div>
 </div>
 
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="footer-logo">うちなー<span>旅記</span></span>
-      <p>沖縄生まれのライターが綴る、<br>島のリアルな旅日記。<br>地元目線の情報をお届けします。</p>
-    </div>
-    <div class="footer-col">
-      <h4>CONTENTS</h4>
-      <a onclick="showPage('home'); scrollToSection('spots')">観光スポット</a>
-      <a onclick="showPage('home'); scrollToSection('blog')">ブログ・旅日記</a>
-      <a onclick="filterBlog('グルメ', null); showPage('home'); scrollToSection('blog')">グルメ</a>
-      <a onclick="filterBlog('ビーチ', null); showPage('home'); scrollToSection('blog')">ビーチ情報</a>
-      <a onclick="filterBlog('旅のヒント', null); showPage('home'); scrollToSection('blog')">旅のヒント</a>
-    </div>
-    <div class="footer-col">
-      <h4>ABOUT</h4>
-      <a onclick="showPage('profile')">プロフィール</a>
-      <a href="#">このサイトについて</a>
-      <a href="#">プライバシーポリシー</a>
-      <a href="mailto:misaki@uchinatabiki.jp">お問い合わせ</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 うちなー旅記 / 比嘉海咲</span>
-    <div>
-      <a href="#">プライバシーポリシー</a>
-      <a href="#">お問い合わせ</a>
-    </div>
-  </div>
+<div class="footer-inner">
+<div class="footer-brand">
+<span class="footer-logo">うちなー<span>旅記</span></span>
+<p>沖縄生まれのライターが綴る、<br>島のリアルな旅日記。<br>地元目線の情報をお届けします。</p>
+</div>
+<div class="footer-col">
+<h4>CONTENTS</h4>
+<a onclick="showPage('home'); scrollToSection('spots')">観光スポット</a>
+<a onclick="showPage('home'); scrollToSection('blog')">ブログ・旅日記</a>
+<a onclick="filterBlog('グルメ', null); showPage('home'); scrollToSection('blog')">グルメ</a>
+<a onclick="filterBlog('ビーチ', null); showPage('home'); scrollToSection('blog')">ビーチ情報</a>
+<a onclick="filterBlog('旅のヒント', null); showPage('home'); scrollToSection('blog')">旅のヒント</a>
+</div>
+<div class="footer-col">
+<h4>ABOUT</h4>
+<a onclick="showPage('profile')">プロフィール</a>
+<a href="#">このサイトについて</a>
+
+<a href="#">プライバシーポリシー</a>
+
+<a href="mailto:misaki@uchinatabiki.jp">お問い合わせ</a>
+
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 うちなー旅記 / 比嘉海咲</span>
+<div>
+<a href="#">プライバシーポリシー</a>
+
+<a href="#">お問い合わせ</a>
+
+</div>
+</div>
 </footer>
 
 <script>
 // ===== PAGE ROUTING =====
 function showPage(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+document.getElementById('page-' + name).classList.add('active');
+window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function scrollToSection(id) {
-  setTimeout(() => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 80);
+setTimeout(() => {
+const el = document.getElementById(id);
+if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}, 80);
 }
 
 // ===== CATEGORY FILTER =====
 function filterBlog(cat, btn) {
-  const cards = document.querySelectorAll('#blogGrid .blog-card');
-  cards.forEach(c => {
-    if (cat === 'all' || c.dataset.cat === cat) {
-      c.style.display = '';
-    } else {
-      c.style.display = 'none';
-    }
-  });
-  if (btn) {
-    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-  }
+const cards = document.querySelectorAll('#blogGrid .blog-card');
+cards.forEach(c => {
+if (cat === 'all' || c.dataset.cat === cat) {
+c.style.display = '';
+} else {
+c.style.display = 'none';
+}
+});
+if (btn) {
+document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+}
 }
 
 // ===== ARTICLES =====
 const articles = {
-  soki: {
-    cat: 'グルメ',
-    date: '2025年6月12日',
-    title: '地元民が通う！那覇の本当に旨いソーキそばの店5選',
-    img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
-    related: ['beach','eisa','awamori'],
-    body: `
-      <span class="diary-date">2025年6月12日、那覇市内</span>
-      <p>梅雨が明けて、那覇はじりじりと暑くなってきた。こんな日でもソーキそばが食べたくなるのが沖縄人というものだ。今日は、観光客向けのガイドブックには載っていない、地元民が足繁く通う名店を5軒ご紹介します。</p>
-      <h2>1. 首里そば（首里）</h2>
-      <p>首里城のすぐ近く、路地を一本入ったところにある小さな食堂。昼の営業だけで毎日売り切れるため、11時の開店に合わせて並ぶのがお作法。あっさりとした鰹だしに、やわらかく煮込まれたソーキがのって、一杯650円。シンプルだからこそ、だしの深みが際立ちます。</p>
-      <h2>2. 八重山そば 波照間（牧志）</h2>
-      <p>石垣出身のご主人が那覇で開いた一軒。八重山そばは麺が細く、ストレートなのが特徴。本場の味をそのまま持ってきたスープは、那覇のそばとは少し違う甘みがあって、これはこれで癖になります。</p>
-      <h2>3〜5は実際に行って確かめてみて</h2>
-      <p>正直なことを言うと、「教えたくない」気持ちもあります。地元の人がひっそりと通う場所は、あまり有名になりすぎると変わってしまうから。でも、それだけ価値があるということでもある。ぜひ、那覇の路地をゆっくり歩きながら自分だけの一軒を見つけてみてください。</p>
-    `
-  },
-  beach: {
-    cat: 'ビーチ',
-    date: '2025年6月5日',
-    title: '穴場ビーチ10選——地元だけが知る透明度抜群の海',
-    img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80',
-    related: ['soki','hint','eisa'],
-    body: `
-      <span class="diary-date">2025年6月5日、恩納村〜国頭村</span>
-      <p>「沖縄のビーチはどこもきれい」というのは半分本当で、半分は違う。観光地化されたビーチは駐車場やシャワーが整備されて便利な反面、夏になると人でぎゅうぎゅうになる。今回は、ウチナーンチュが密かに通う穴場をご紹介します。</p>
-      <h2>まず知ってほしいこと</h2>
-      <p>穴場ビーチには共通点があります。駐車場が狭い（または砂利道の先にある）、売店やシャワーがない、地図アプリに名前が載っていない——この三拍子が揃っていれば、だいたい当たりです。</p>
-      <h2>ビーチ1：アラハビーチ周辺の入り江（北谷）</h2>
-      <p>観光客が集まるアラハビーチから少し北へ歩くと、地元の子どもたちが遊ぶ小さな入り江があります。透明度は本島でも屈指のレベル。岩に隠れて遊泳するオヤビッチャやデバスズメダイを間近に見られます。</p>
-      <h2>ビーチ2：備瀬のフクギ並木前の浜（本部町）</h2>
-      <p>フクギ並木の観光客は並木沿いを歩くだけで帰ってしまいますが、並木を抜けた先の浜は穏やかで美しい。伊江島が正面に見えて、夕暮れ時は最高です。</p>
-    `
-  },
-  eisa: {
-    cat: '文化・祭り',
-    date: '2025年5月28日',
-    title: 'エイサーの季節がやってきた——夏祭り完全ガイド2025',
-    img: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=900&q=80',
-    related: ['beach','life','soki'],
-    body: `
-      <span class="diary-date">2025年5月28日、沖縄市</span>
-      <p>旧盆が近づくと、島のあちこちから太鼓の音が聞こえてくる。練習の音が夜風に乗って流れてくるのを聞くと、「ああ、夏が来たな」と体が感じる。ウチナーンチュにとって、エイサーはそういうものです。</p>
-      <h2>エイサーとは</h2>
-      <p>エイサーは沖縄の旧盆（旧暦7月13〜15日）に行われる伝統芸能です。先祖の霊を迎え、送り出すための踊りが起源で、地域ごとにスタイルが異なるのが特徴。勇壮な大太鼓が鳴り響く北部系から、しなやかな女性的な動きが美しい南部系まで、同じ「エイサー」でもずいぶん違います。</p>
-      <h2>2025年の主要イベント</h2>
-      <p>今年は旧盆が8月11〜13日。「沖縄全島エイサーまつり」は8月22〜24日、沖縄市コザ運動公園で開催予定です。県内各地の青年会が集結する迫力は別格。初めて見る方にはまずこれをおすすめします。</p>
-      <h2>地域の道じゅねーを見るには</h2>
-      <p>旧盆の夜、青年会が地域の家々をまわる「道じゅねー」は、祭りとは別の感動があります。観客と演者の距離が近く、迫力が全然違う。那覇市内なら首里や那覇新都心あたりを夜に歩いていると、偶然出会えることもあります。</p>
-    `
-  },
-  life: {
-    cat: '島暮らし',
-    date: '2025年5月19日',
-    title: '沖縄移住2年目の私が感じたこと——島暮らしのリアルな話',
-    img: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=900&q=80',
-    related: ['hint','eisa','beach'],
-    body: `
-      <span class="diary-date">2025年5月19日、那覇市</span>
-      <p>移住して2年が経ちました。最初の1年と、2年目は全然違う。1年目はずっと「旅行者モード」が抜けなかったけれど、2年目になってようやく生活者として島を見られるようになってきた気がします。</p>
-      <h2>良かったこと</h2>
-      <p>まず、海が近い。当たり前のことだけど、これは想像以上に精神的に豊かさをもたらしてくれます。仕事で嫌なことがあっても、夕方に海を見ればなんとかなる。これは本当のことです。それから、人の距離感が近い。近所のおじいが野菜をくれたり、顔見知りの食堂のおばあが多めに盛ってくれたりする。東京にはなかった感覚でした。</p>
-      <h2>難しかったこと</h2>
-      <p>仕事の選択肢が少ないこと、これは率直に言って課題です。観光業・飲食・IT系のリモートワーク、この三択になりがちで、私もフリーでライターをしながらなんとかやっています。収入は東京時代より3割くらい減りました。でも支出も減ったので、トータルの豊かさで言えば負けていない、と思っています（たぶん）。</p>
-      <h2>3年目に向けて</h2>
-      <p>次の目標は、北部の山原（やんばる）エリアに小さな家を借りること。那覇は便利だけど、もう少し自然に近いところで暮らしてみたい。いずれこのブログにも書きます。</p>
-    `
-  },
-  hint: {
-    cat: '旅のヒント',
-    date: '2025年5月8日',
-    title: '那覇を拠点に3泊4日——はじめての沖縄本島の回り方',
-    img: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=900&q=80',
-    related: ['soki','beach','life'],
-    body: `
-      <span class="diary-date">2025年5月8日</span>
-      <p>「沖縄に初めて行くんだけど、どう回ればいい？」という質問をよくもらいます。今回は、那覇を拠点にした3泊4日のモデルプランをまとめました。レンタカーありの前提です。</p>
-      <h2>1日目：那覇市内をゆっくり歩く</h2>
-      <p>到着日は国際通りや牧志公設市場あたりをぶらぶら。夜は沖縄料理の居酒屋で泡盛を試してみて。ゴーヤーチャンプルー、ラフテー、海ぶどう——この三つを食べれば沖縄グルメの入門は完了です。</p>
-      <h2>2日目：中部（恩納村・読谷村）</h2>
-      <p>万座毛、青の洞窟、残波岬と、定番の絶景を一日でまわれます。シュノーケリングをやるなら読谷の海がおすすめ。透明度が高くて初心者でも楽しめます。</p>
-      <h2>3日目：北部（やんばる・古宇利島）</h2>
-      <p>古宇利大橋はドライブルートとして最高。橋の手前の展望台から眺める海の色は、写真で見るよりずっときれいです。やんばるの森はドライブだけでも十分に雰囲気が伝わります。</p>
-      <h2>4日目：首里城と空港</h2>
-      <p>帰りの便が夕方なら午前中に首里城へ。朝イチは空いていてゆっくり見られます。昼は近くの首里そばで締めくくり。</p>
-    `
-  },
-  awamori: {
-    cat: 'グルメ',
-    date: '2025年4月22日',
-    title: '泡盛ビギナーへ——まず飲むべき銘柄と飲み方ガイド',
-    img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&q=80',
-    related: ['soki','eisa','hint'],
-    body: `
-      <span class="diary-date">2025年4月22日、那覇市</span>
-      <p>「泡盛が苦手で」と言う人に会うたびに、「どんなの飲みましたか？」と聞くと、だいたい強いやつを一気に飲まされていたりします。入り口を間違えると何でも嫌いになる。今回は、泡盛がはじめての方向けに、飲みやすい銘柄と飲み方を案内します。</p>
-      <h2>まず知ってほしい基礎知識</h2>
-      <p>泡盛は米を原料にした蒸留酒で、タイ米と黒麹を使います。アルコール度数は一般的に30度前後。3年以上熟成させたものは「古酒（クース）」と呼ばれ、まろやかで深みがあります。</p>
-      <h2>ビギナーにおすすめの銘柄</h2>
-      <p>まず「残波（ざんぱ）ホワイト」。アルコール30度で、クセが少なく飲みやすい。次に「菊之露（きくのつゆ）」。沖縄県内でもっとも親しまれている銘柄のひとつで、居酒屋では大体置いてあります。</p>
-      <h2>飲み方はロックから</h2>
-      <p>最初はロック（氷を入れてそのまま）で飲むのがおすすめ。水割りよりもアルコール感があるように聞こえますが、氷が溶けながら少しずつ薄まるのでちょうどいい。水割りの場合は泡盛1：水2くらいが目安です。</p>
-    `
-  },
-  summer: {
-    cat: '特集',
-    date: '2025年6月1日',
-    title: '夏の沖縄を120%楽しむ完全ガイド2025',
-    img: 'https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=900&q=80',
-    related: ['beach','eisa','soki'],
-    body: `
-      <span class="diary-date">2025年夏 特集号</span>
-      <p>梅雨が明けた沖縄は、一年で一番エネルギーに満ちた季節を迎えます。青すぎる空、透き通る海、島中に響く太鼓の音——この夏、沖縄に来るなら後悔のない旅にしてほしい。そのためのガイドをまとめました。</p>
-      <h2>7月：梅雨明け直後の海が一番きれい</h2>
-      <p>梅雨明けは例年6月下旬〜7月上旬。この時期の海は一年で最も透明度が高く、シュノーケリングやダイビングに最適です。観光客がまだ多くなる前のこのタイミングを狙うのがプロの判断。</p>
-      <h2>8月：エイサーと花火で島が燃える</h2>
-      <p>旧盆（今年は8月11〜13日）を境に、島の各地でエイサーが始まります。沖縄全島エイサーまつり（8月22〜24日）はその集大成。那覇の花火大会も8月に開催予定です。</p>
-      <h2>夏の注意点</h2>
-      <p>台風シーズンは7〜9月。旅行保険への加入と、日程に1〜2日の余裕を持たせることを強くおすすめします。日差しは本州とは比べ物にならないほど強いので、日焼け止め・帽子・こまめな水分補給を忘れずに。</p>
-    `
-  }
+soki: {
+cat: 'グルメ',
+date: '2025年6月12日',
+title: '地元民が通う！那覇の本当に旨いソーキそばの店5選',
+img: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?w=900&q=80',
+related: ['beach','eisa','awamori'],
+body: `
+<span class="diary-date">2025年6月12日、那覇市内</span>
+<p>梅雨が明けて、那覇はじりじりと暑くなってきた。こんな日でもソーキそばが食べたくなるのが沖縄人というものだ。今日は、観光客向けのガイドブックには載っていない、地元民が足繁く通う名店を5軒ご紹介します。</p>
+<h2>1. 首里そば（首里）</h2>
+<p>首里城のすぐ近く、路地を一本入ったところにある小さな食堂。昼の営業だけで毎日売り切れるため、11時の開店に合わせて並ぶのがお作法。あっさりとした鰹だしに、やわらかく煮込まれたソーキがのって、一杯650円。シンプルだからこそ、だしの深みが際立ちます。</p>
+<h2>2. 八重山そば 波照間（牧志）</h2>
+<p>石垣出身のご主人が那覇で開いた一軒。八重山そばは麺が細く、ストレートなのが特徴。本場の味をそのまま持ってきたスープは、那覇のそばとは少し違う甘みがあって、これはこれで癖になります。</p>
+<h2>3〜5は実際に行って確かめてみて</h2>
+<p>正直なことを言うと、「教えたくない」気持ちもあります。地元の人がひっそりと通う場所は、あまり有名になりすぎると変わってしまうから。でも、それだけ価値があるということでもある。ぜひ、那覇の路地をゆっくり歩きながら自分だけの一軒を見つけてみてください。</p>
+`
+},
+beach: {
+cat: 'ビーチ',
+date: '2025年6月5日',
+title: '穴場ビーチ10選——地元だけが知る透明度抜群の海',
+img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=900&q=80',
+related: ['soki','hint','eisa'],
+body: `
+<span class="diary-date">2025年6月5日、恩納村〜国頭村</span>
+<p>「沖縄のビーチはどこもきれい」というのは半分本当で、半分は違う。観光地化されたビーチは駐車場やシャワーが整備されて便利な反面、夏になると人でぎゅうぎゅうになる。今回は、ウチナーンチュが密かに通う穴場をご紹介します。</p>
+<h2>まず知ってほしいこと</h2>
+<p>穴場ビーチには共通点があります。駐車場が狭い（または砂利道の先にある）、売店やシャワーがない、地図アプリに名前が載っていない——この三拍子が揃っていれば、だいたい当たりです。</p>
+<h2>ビーチ1：アラハビーチ周辺の入り江（北谷）</h2>
+<p>観光客が集まるアラハビーチから少し北へ歩くと、地元の子どもたちが遊ぶ小さな入り江があります。透明度は本島でも屈指のレベル。岩に隠れて遊泳するオヤビッチャやデバスズメダイを間近に見られます。</p>
+<h2>ビーチ2：備瀬のフクギ並木前の浜（本部町）</h2>
+<p>フクギ並木の観光客は並木沿いを歩くだけで帰ってしまいますが、並木を抜けた先の浜は穏やかで美しい。伊江島が正面に見えて、夕暮れ時は最高です。</p>
+`
+},
+eisa: {
+cat: '文化・祭り',
+date: '2025年5月28日',
+title: 'エイサーの季節がやってきた——夏祭り完全ガイド2025',
+img: 'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=900&q=80',
+related: ['beach','life','soki'],
+body: `
+<span class="diary-date">2025年5月28日、沖縄市</span>
+<p>旧盆が近づくと、島のあちこちから太鼓の音が聞こえてくる。練習の音が夜風に乗って流れてくるのを聞くと、「ああ、夏が来たな」と体が感じる。ウチナーンチュにとって、エイサーはそういうものです。</p>
+<h2>エイサーとは</h2>
+<p>エイサーは沖縄の旧盆（旧暦7月13〜15日）に行われる伝統芸能です。先祖の霊を迎え、送り出すための踊りが起源で、地域ごとにスタイルが異なるのが特徴。勇壮な大太鼓が鳴り響く北部系から、しなやかな女性的な動きが美しい南部系まで、同じ「エイサー」でもずいぶん違います。</p>
+<h2>2025年の主要イベント</h2>
+<p>今年は旧盆が8月11〜13日。「沖縄全島エイサーまつり」は8月22〜24日、沖縄市コザ運動公園で開催予定です。県内各地の青年会が集結する迫力は別格。初めて見る方にはまずこれをおすすめします。</p>
+<h2>地域の道じゅねーを見るには</h2>
+<p>旧盆の夜、青年会が地域の家々をまわる「道じゅねー」は、祭りとは別の感動があります。観客と演者の距離が近く、迫力が全然違う。那覇市内なら首里や那覇新都心あたりを夜に歩いていると、偶然出会えることもあります。</p>
+`
+},
+life: {
+cat: '島暮らし',
+date: '2025年5月19日',
+title: '沖縄移住2年目の私が感じたこと——島暮らしのリアルな話',
+img: 'https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=900&q=80',
+related: ['hint','eisa','beach'],
+body: `
+<span class="diary-date">2025年5月19日、那覇市</span>
+<p>移住して2年が経ちました。最初の1年と、2年目は全然違う。1年目はずっと「旅行者モード」が抜けなかったけれど、2年目になってようやく生活者として島を見られるようになってきた気がします。</p>
+<h2>良かったこと</h2>
+<p>まず、海が近い。当たり前のことだけど、これは想像以上に精神的に豊かさをもたらしてくれます。仕事で嫌なことがあっても、夕方に海を見ればなんとかなる。これは本当のことです。それから、人の距離感が近い。近所のおじいが野菜をくれたり、顔見知りの食堂のおばあが多めに盛ってくれたりする。東京にはなかった感覚でした。</p>
+<h2>難しかったこと</h2>
+<p>仕事の選択肢が少ないこと、これは率直に言って課題です。観光業・飲食・IT系のリモートワーク、この三択になりがちで、私もフリーでライターをしながらなんとかやっています。収入は東京時代より3割くらい減りました。でも支出も減ったので、トータルの豊かさで言えば負けていない、と思っています（たぶん）。</p>
+<h2>3年目に向けて</h2>
+<p>次の目標は、北部の山原（やんばる）エリアに小さな家を借りること。那覇は便利だけど、もう少し自然に近いところで暮らしてみたい。いずれこのブログにも書きます。</p>
+`
+},
+hint: {
+cat: '旅のヒント',
+date: '2025年5月8日',
+title: '那覇を拠点に3泊4日——はじめての沖縄本島の回り方',
+img: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=900&q=80',
+related: ['soki','beach','life'],
+body: `
+<span class="diary-date">2025年5月8日</span>
+<p>「沖縄に初めて行くんだけど、どう回ればいい？」という質問をよくもらいます。今回は、那覇を拠点にした3泊4日のモデルプランをまとめました。レンタカーありの前提です。</p>
+<h2>1日目：那覇市内をゆっくり歩く</h2>
+<p>到着日は国際通りや牧志公設市場あたりをぶらぶら。夜は沖縄料理の居酒屋で泡盛を試してみて。ゴーヤーチャンプルー、ラフテー、海ぶどう——この三つを食べれば沖縄グルメの入門は完了です。</p>
+<h2>2日目：中部（恩納村・読谷村）</h2>
+<p>万座毛、青の洞窟、残波岬と、定番の絶景を一日でまわれます。シュノーケリングをやるなら読谷の海がおすすめ。透明度が高くて初心者でも楽しめます。</p>
+<h2>3日目：北部（やんばる・古宇利島）</h2>
+<p>古宇利大橋はドライブルートとして最高。橋の手前の展望台から眺める海の色は、写真で見るよりずっときれいです。やんばるの森はドライブだけでも十分に雰囲気が伝わります。</p>
+<h2>4日目：首里城と空港</h2>
+<p>帰りの便が夕方なら午前中に首里城へ。朝イチは空いていてゆっくり見られます。昼は近くの首里そばで締めくくり。</p>
+`
+},
+awamori: {
+cat: 'グルメ',
+date: '2025年4月22日',
+title: '泡盛ビギナーへ——まず飲むべき銘柄と飲み方ガイド',
+img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&q=80',
+related: ['soki','eisa','hint'],
+body: `
+<span class="diary-date">2025年4月22日、那覇市</span>
+<p>「泡盛が苦手で」と言う人に会うたびに、「どんなの飲みましたか？」と聞くと、だいたい強いやつを一気に飲まされていたりします。入り口を間違えると何でも嫌いになる。今回は、泡盛がはじめての方向けに、飲みやすい銘柄と飲み方を案内します。</p>
+<h2>まず知ってほしい基礎知識</h2>
+<p>泡盛は米を原料にした蒸留酒で、タイ米と黒麹を使います。アルコール度数は一般的に30度前後。3年以上熟成させたものは「古酒（クース）」と呼ばれ、まろやかで深みがあります。</p>
+<h2>ビギナーにおすすめの銘柄</h2>
+<p>まず「残波（ざんぱ）ホワイト」。アルコール30度で、クセが少なく飲みやすい。次に「菊之露（きくのつゆ）」。沖縄県内でもっとも親しまれている銘柄のひとつで、居酒屋では大体置いてあります。</p>
+<h2>飲み方はロックから</h2>
+<p>最初はロック（氷を入れてそのまま）で飲むのがおすすめ。水割りよりもアルコール感があるように聞こえますが、氷が溶けながら少しずつ薄まるのでちょうどいい。水割りの場合は泡盛1：水2くらいが目安です。</p>
+`
+},
+summer: {
+cat: '特集',
+date: '2025年6月1日',
+title: '夏の沖縄を120%楽しむ完全ガイド2025',
+img: 'https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=900&q=80',
+related: ['beach','eisa','soki'],
+body: `
+<span class="diary-date">2025年夏 特集号</span>
+<p>梅雨が明けた沖縄は、一年で一番エネルギーに満ちた季節を迎えます。青すぎる空、透き通る海、島中に響く太鼓の音——この夏、沖縄に来るなら後悔のない旅にしてほしい。そのためのガイドをまとめました。</p>
+<h2>7月：梅雨明け直後の海が一番きれい</h2>
+<p>梅雨明けは例年6月下旬〜7月上旬。この時期の海は一年で最も透明度が高く、シュノーケリングやダイビングに最適です。観光客がまだ多くなる前のこのタイミングを狙うのがプロの判断。</p>
+<h2>8月：エイサーと花火で島が燃える</h2>
+<p>旧盆（今年は8月11〜13日）を境に、島の各地でエイサーが始まります。沖縄全島エイサーまつり（8月22〜24日）はその集大成。那覇の花火大会も8月に開催予定です。</p>
+<h2>夏の注意点</h2>
+<p>台風シーズンは7〜9月。旅行保険への加入と、日程に1〜2日の余裕を持たせることを強くおすすめします。日差しは本州とは比べ物にならないほど強いので、日焼け止め・帽子・こまめな水分補給を忘れずに。</p>
+`
+}
 };
 
 const articleKeys = Object.keys(articles);
 
 function showArticle(key) {
-  const a = articles[key];
-  if (!a) return;
+const a = articles[key];
+if (!a) return;
 
-  const relatedHTML = a.related.map(rk => {
-    const r = articles[rk];
-    if (!r) return '';
-    return `
-      <div class="related-card" onclick="showArticle('${rk}')">
-        <img class="related-img" src="${r.img}" alt="${r.title}">
-        <p class="related-cat">${r.cat}</p>
-        <p class="related-card-title">${r.title}</p>
-      </div>`;
-  }).join('');
+const relatedHTML = a.related.map(rk => {
+const r = articles[rk];
+if (!r) return '';
+return `
+<div class="related-card" onclick="showArticle('${rk}')">
+<img class="related-img" src="${r.img}" alt="${r.title}">
+<p class="related-cat">${r.cat}</p>
+<p class="related-card-title">${r.title}</p>
+</div>`;
+}).join('');
 
-  document.getElementById('articleContent').innerHTML = `
-    <span class="article-cat">${a.cat}</span>
-    <h1 class="article-title">${a.title}</h1>
-    <div class="article-meta">
-      <div class="article-author">
-        <img class="article-avatar"
-          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80"
-          alt="海咲">
-        <span class="article-author-name">比嘉　海咲</span>
-      </div>
-      <span class="article-date">${a.date}</span>
-    </div>
-    <img class="article-hero-img" src="${a.img}" alt="${a.title}">
-    <div class="article-body">${a.body}</div>
-    <div class="related-section">
-      <p class="related-title">関連記事</p>
-      <div class="related-grid">${relatedHTML}</div>
-    </div>
-  `;
+document.getElementById('articleContent').innerHTML = `
+<span class="article-cat">${a.cat}</span>
+<h1 class="article-title">${a.title}</h1>
+<div class="article-meta">
+<div class="article-author">
+<img class="article-avatar"
+src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&q=80"
+alt="海咲">
+<span class="article-author-name">比嘉　海咲</span>
+</div>
+<span class="article-date">${a.date}</span>
+</div>
+<img class="article-hero-img" src="${a.img}" alt="${a.title}">
+<div class="article-body">${a.body}</div>
+<div class="related-section">
+<p class="related-title">関連記事</p>
+<div class="related-grid">${relatedHTML}</div>
+</div>
+`;
 
-  showPage('article');
+showPage('article');
 }
 </script>
 </body>
 </html>
+
+
