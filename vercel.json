@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/spot/(.*)", "destination": "/loading.html" }
+  ]
+}
